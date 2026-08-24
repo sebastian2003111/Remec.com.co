@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Servicios — REMEC S.A.S.</title>
+    <title>Filosofía Corporativa — REMEC S.A.S.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -107,6 +107,9 @@
       .reveal-d3 {
         transition-delay: 0.24s;
       }
+      .reveal-d4 {
+        transition-delay: 0.32s;
+      }
 
       .bp-frame {
         position: relative;
@@ -178,7 +181,7 @@
         border-bottom: 1px solid transparent;
       }
       header.scrolled {
-        background: rgba(18, 21, 26, 0.88);
+        background: rgba(21, 24, 28, 0.88);
         backdrop-filter: blur(10px);
         padding: 12px 0;
         border-bottom: 1px solid var(--line);
@@ -197,7 +200,7 @@
       .brand img {
         height: 34px;
         width: auto;
-        
+       
       }
       .brand-text {
         font-family: "Big Shoulders Display", sans-serif;
@@ -208,7 +211,7 @@
       nav ul {
         list-style: none;
         display: flex;
-        gap: 28px;
+        gap: 24px;
         margin: 0;
         padding: 0;
       }
@@ -254,7 +257,6 @@
         }
       }
 
-      /* ---------- hamburger button ---------- */
       .burger {
         display: flex;
         flex-direction: column;
@@ -291,7 +293,6 @@
         transform: translateY(-7px) rotate(-45deg);
       }
 
-      /* ---------- mobile drawer ---------- */
       .mobile-menu {
         position: fixed;
         top: 0;
@@ -317,12 +318,12 @@
         padding: 0;
         display: flex;
         flex-direction: column;
-        gap: 26px;
+        gap: 24px;
       }
       .mobile-menu a {
         font-family: "Big Shoulders Display", sans-serif;
         font-weight: 800;
-        font-size: 26px;
+        font-size: 23px;
         text-transform: uppercase;
         color: var(--paper);
         letter-spacing: 0.01em;
@@ -333,14 +334,14 @@
       }
       .mobile-menu .nav-cta {
         display: inline-block;
-        margin-top: 34px;
+        margin-top: 30px;
         width: fit-content;
       }
       .menu-scrim {
         position: fixed;
         inset: 0;
         z-index: 98;
-        background: rgba(18, 21, 26, 0.7);
+        background: rgba(21, 24, 28, 0.7);
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.35s ease;
@@ -379,8 +380,8 @@
         z-index: 1;
         background: linear-gradient(
           180deg,
-          rgba(18, 21, 26, 0.4) 0%,
-          rgba(18, 21, 26, 0.55) 40%,
+          rgba(21, 24, 28, 0.4) 0%,
+          rgba(21, 24, 28, 0.55) 40%,
           var(--ink) 100%
         );
       }
@@ -406,42 +407,43 @@
         padding-top: 150px;
       }
       .page-hero h1 {
-        font-size: clamp(44px, 8vw, 96px);
+        font-size: clamp(40px, 7.4vw, 88px);
         color: var(--paper);
       }
-      .page-hero p {
-        margin-top: 18px;
-        max-width: 520px;
-        color: var(--text-dim);
-        font-size: 16px;
-        line-height: 1.65;
+      .page-hero h1 em {
+        font-style: normal;
+        color: var(--ember);
       }
 
       section {
         padding: 96px 0;
       }
       .sec-head {
-        max-width: 640px;
-        margin-bottom: 48px;
+        max-width: 680px;
+        margin-bottom: 44px;
       }
       .sec-head h2 {
-        font-size: clamp(30px, 4.6vw, 48px);
+        font-size: clamp(28px, 4.2vw, 44px);
         color: var(--paper);
         margin-top: 14px;
       }
-      .sec-head p {
+
+      .sgi-copy {
+        max-width: 820px;
         color: var(--text-dim);
-        margin-top: 14px;
-        line-height: 1.7;
-        font-size: 15px;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+      .sgi-copy strong {
+        color: var(--paper);
+        font-weight: 600;
       }
 
-      /* dimension divider between service blocks */
       .dim-divider {
         display: flex;
         align-items: center;
         gap: 14px;
-        margin: 0 0 40px;
+        margin: 44px 0 32px;
         font-family: "IBM Plex Mono", monospace;
         font-size: 11px;
         color: var(--blueprint-dim);
@@ -455,104 +457,124 @@
         background: var(--line);
       }
 
-      .svc-block {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0;
-        margin-bottom: 2px;
-        background: var(--ink-2);
-        border: 1px solid var(--line);
-      }
-      @media (min-width: 900px) {
-        .svc-block {
-          grid-template-columns: 0.9fr 1.1fr;
-        }
-      }
-      .svc-block:nth-child(even) {
-      }
-      .svc-block-img {
-        position: relative;
-        min-height: 260px;
-        overflow: hidden;
-      }
-      .svc-block-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        inset: 0;
-        transition: transform 0.8s cubic-bezier(0.16, 0.8, 0.28, 1);
-        filter: saturate(0.85) contrast(1.05);
-      }
-      .svc-block:hover .svc-block-img img {
-        transform: scale(1.06);
-      }
-      .svc-block-body {
-        padding: 40px 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .svc-tag {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 11px;
-        color: var(--blueprint);
-        border: 1px solid var(--line-soft);
-        padding: 3px 9px;
-        width: fit-content;
-        margin-bottom: 16px;
-      }
-      .svc-block-body h3 {
-        font-size: clamp(24px, 3vw, 32px);
-        color: var(--paper);
-        margin-bottom: 16px;
-      }
-      .svc-block-body ul {
+      .sgi-list {
+        list-style: none;
         margin: 0;
         padding: 0;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
       }
-      .svc-block-body li {
+      @media (min-width: 760px) {
+        .sgi-list {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .sgi-list li {
+        background: var(--ink-2);
+        padding: 24px 26px;
         position: relative;
-        padding-left: 20px;
+        padding-left: 44px;
         color: var(--text-dim);
         font-size: 14.5px;
-        line-height: 1.55;
+        line-height: 1.65;
       }
-      .svc-block-body li::before {
+      .sgi-list li::before {
         content: "";
         position: absolute;
-        left: 0;
-        top: 8px;
-        width: 8px;
+        left: 22px;
+        top: 28px;
+        width: 10px;
         height: 1px;
         background: var(--ember);
       }
-      .svc-block-body li strong {
-        color: var(--paper);
-        font-weight: 600;
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      @media (min-width: 640px) {
+        .values-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 980px) {
+        .values-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .value-card {
+        background: var(--ink-2);
+        padding: 28px 26px;
+      }
+      .value-card h4 {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 14px;
+        color: var(--ember-2);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0 0 10px;
+      }
+      .value-card p {
+        margin: 0;
+        color: var(--text-dim);
+        font-size: 14px;
+        line-height: 1.65;
       }
 
-      .cta-strip {
+      .cert-band {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .cert-plate {
+        background: var(--ink-2);
+        flex: 1 1 220px;
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+      }
+      .cert-plate img {
+        max-height: 80px;
+        width: auto;
+        
+      }
+
+      .quote-strip {
         background: var(--ink-2);
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
+        padding: 64px 0;
+        text-align: center;
+      }
+      .quote-strip p {
+        font-family: "Big Shoulders Display", sans-serif;
+        font-weight: 700;
+        text-transform: none;
+        font-size: clamp(20px, 3vw, 30px);
+        color: var(--paper);
+        max-width: 760px;
+        margin: 0 auto;
+        line-height: 1.3;
+      }
+
+      .cta-strip {
         padding: 72px 0;
         text-align: center;
       }
-      .cta-strip h2 {
-        font-size: clamp(28px, 4.4vw, 44px);
-        color: var(--paper);
-      }
       .cta-strip p {
         color: var(--text-dim);
-        margin: 16px auto 30px;
-        max-width: 460px;
+        margin: 0 0 26px;
         font-size: 15px;
-        line-height: 1.6;
       }
       .btn {
         font-family: "IBM Plex Mono", monospace;
@@ -613,7 +635,7 @@
     <header id="siteHeader">
   <div class="wrap navrow">
     <div class="brand">
-      <img src="img/logo.png" alt="REMEC">
+      <img src="/img/logo.png" alt="REMEC">
       <!-- <span class="brand-text">REMEC S.A.S.</span> -->
     </div>
     <nav class="navlinks">
@@ -641,7 +663,7 @@
     <li><a href="index.html">Inicio</a></li>
         <li><a href="servicios.html">Servicios</a></li>
         <li><a href="filo.html">Filosofía Corporativa</a></li>
-        <li><a href="postes.html">Postes</a></li>
+        <li><a href="AP.html">Postes</a></li>
         <li><a href="arquimidex.html">Arquimidex</a></li>
         <li><a href="arteplasma.html">Arte Plasma</a></li>
         <li><a href="clientes.html">Clientes</a></li>
@@ -652,316 +674,153 @@
 
     <section class="page-hero">
       <div class="page-hero-img">
-        <img src="https://remec.com.co/images/1.jpg" alt="Taller REMEC" />
+        <img
+          src="https://remec.com.co/images/carrusel_02.jpg"
+          alt="Filosofía Corporativa REMEC"
+        />
       </div>
       <div class="page-hero-scrim"></div>
       <div class="page-hero-grid"></div>
       <div class="wrap page-hero-content">
-        <div class="eyebrow">Portafolio completo</div>
-        <h1 style="margin-top: 14px">Servicios</h1>
-        <p>
-          Nueve líneas de trabajo bajo un mismo taller: motores, estructuras,
-          pintura, alumbrado público, mecanizado, diesel, tratamientos
-          superficiales, bombeo y arte en metal.
+        <div class="eyebrow">Sistema de Gestión Integrado</div>
+        <h1 style="margin-top: 14px"><em>Filosofía</em> Corporativa</h1>
+      </div>
+    </section>
+
+    <section id="sgi">
+      <div class="wrap">
+        <p class="sgi-copy reveal">
+          <strong>REMEC</strong> establece su compromiso de brindar adecuadas
+          soluciones de Ingeniería Mecánica, Eléctrica, Civil, Estructural y
+          Mantenimiento Automotriz e Industrial, apoyados en la implementación y
+          mejora continua de un Sistema de Gestión Integrado que promueva:
+        </p>
+
+        <ul class="sgi-list reveal reveal-d1">
+          <li>La sostenibilidad y el crecimiento continuo.</li>
+          <li>
+            La satisfacción de los requisitos del cliente y demás parte
+            interesadas, enfocándose en la entrega oportuna y el cumplimiento de
+            especificaciones técnicas propias del producto o servicio entregado.
+          </li>
+          <li>
+            La protección en seguridad y salud de todos los trabajadores,
+            controlando principalmente los riesgos mecánicos, biomecánicos,
+            biológicos y de trabajo en altura.
+          </li>
+          <li>
+            La utilización de los mecanismos establecidos para la participación
+            y consulta de los trabajadores y sus representantes.
+          </li>
+          <li>
+            La prevención de la contaminación del medio ambiente, asociada
+            principalmente a la generación de los residuos sólidos.
+          </li>
+        </ul>
+
+        <p class="sgi-copy reveal reveal-d2" style="margin-top: 32px">
+          Todo lo anterior en el marco del análisis frecuente del contexto y el
+          cumplimiento de los requisitos legales y de otra índole asociados al
+          SGI.
         </p>
       </div>
     </section>
 
-    <section id="servicios">
+    <section
+      id="valores"
+      style="
+        background: var(--ink-2);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      "
+    >
       <div class="wrap">
-        <div class="dim-divider reveal">01 — 03 · TALLER PESADO</div>
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S3.jpg"
-              alt="Reconstrucción de motores"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">01</span>
-            <h3>Reconstrucción de Motores</h3>
-            <ul>
-              <li>
-                <strong>Bloques:</strong> encamisado y rectificación de
-                cilindros, alineación de bancada, cambio de bujes, cepillado de
-                superficies planas, prueba hidrostática y lavado químico o al
-                vapor.
-              </li>
-              <li>
-                <strong>Culatas:</strong> cambio de guías y asientos de
-                válvulas, rectificación de válvulas, adaptación para gas
-                natural, cepillado y enderezado, prueba hidrostática con
-                temperatura variable.
-              </li>
-              <li>
-                <strong>Cigüeñales:</strong> rectificación con acabado espejo,
-                enderezado, reconstrucción de puntas y puestos de retenedor.
-              </li>
-            </ul>
-          </div>
+        <div class="sec-head reveal">
+          <div class="eyebrow">Principios</div>
+          <h2>Valores de la empresa</h2>
         </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S6.jpg"
-              alt="Construcciones soldadas"
-              loading="lazy"
-            />
+        <div class="values-grid">
+          <div class="value-card bp-frame reveal">
+            <span class="bp-c2"></span><span class="bp-c3"></span>
+            <h4>Responsabilidad</h4>
+            <p>
+              Estar comprometido en cada una de las actividades o labores
+              realizadas.
+            </p>
           </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">02</span>
-            <h3>Construcciones Soldadas</h3>
-            <ul>
-              <li><strong>Corte:</strong> centro automatizado de corte.</li>
-              <li>
-                <strong>Conformado:</strong> doblado y rolado de lámina, rolado
-                de perfiles.
-              </li>
-              <li>
-                <strong>Ensamble:</strong> estructuras metalmecánicas y
-                soldaduras especializadas.
-              </li>
-              <li>
-                <strong>Control de calidad:</strong> tintas penetrantes y
-                pruebas hidrostáticas.
-              </li>
-              <li>
-                <strong>Servicio:</strong> reparaciones metalmecánicas en sitio.
-              </li>
-            </ul>
+          <div class="value-card bp-frame reveal reveal-d1">
+            <span class="bp-c2"></span><span class="bp-c3"></span>
+            <h4>Honestidad</h4>
+            <p>
+              Comportarse y expresarse con coherencia y sinceridad de acuerdo
+              con la verdad y la justicia.
+            </p>
           </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S5.jpg"
-              alt="Pintura industrial"
-              loading="lazy"
-            />
+          <div class="value-card bp-frame reveal reveal-d2">
+            <span class="bp-c2"></span><span class="bp-c3"></span>
+            <h4>Compromiso</h4>
+            <p>
+              Llevar al máximo nuestras capacidades para sacar adelante todo
+              aquello que se nos ha confiado.
+            </p>
           </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">03</span>
-            <h3>Pintura Industrial</h3>
-            <ul>
-              <li>
-                <strong>Electrostática</strong> — acabado uniforme de alta
-                resistencia.
-              </li>
-              <li>
-                <strong>Acabado oxidado</strong> — tratamiento estético y
-                protector.
-              </li>
-              <li>
-                <strong>Pintura naval</strong> — protección para ambientes
-                húmedos y corrosivos.
-              </li>
-            </ul>
+          <div class="value-card bp-frame reveal reveal-d3">
+            <span class="bp-c2"></span><span class="bp-c3"></span>
+            <h4>Justicia</h4>
+            <p>
+              Esforzarse constantemente para dar a los demás lo que es debido,
+              de acuerdo al conjunto de reglas y normas definidas.
+            </p>
           </div>
-        </div>
-
-        <div class="dim-divider reveal">
-          04 — 06 · INFRAESTRUCTURA Y PRECISIÓN
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S7b.jpg"
-              alt="Postes de alumbrado público"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">04</span>
-            <h3>Postes y Brazos de Alumbrado Público</h3>
-            <ul>
-              <li><strong>Certificación CIDET</strong> vigente desde 2015.</li>
-              <li>
-                Fabricación de postes y brazos para proyectos de infraestructura
-                pública y privada.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/arqui.jpg"
-              alt="Bombas de tornillo Arquimedex"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">05</span>
-            <h3>Bombas de Tornillo — Arquimedex</h3>
-            <ul>
-              <li>
-                Sistemas de bombeo por tornillo para transporte de sólidos y
-                fluidos de alta viscosidad.
-              </li>
-              <li>Diseño a la medida según caudal y aplicación industrial.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S4.jpg"
-              alt="Laboratorio diesel"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">06</span>
-            <h3>Laboratorio Diesel</h3>
-            <ul>
-              <li>
-                Reparación y calibración de inyectores y bombas de inyección
-                diesel.
-              </li>
-              <li>
-                Repuestos originales, precios de importador y banco de pruebas
-                de última tecnología.
-              </li>
-              <li>Técnicos entrenados por <strong>BOSCH Colombia</strong>.</li>
-              <li>
-                Servicio llave en mano, con atención personalizada en sitio.
-              </li>
-              <li>
-                Diagnóstico y reparación de sistemas electrónicos Common-Rail.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dim-divider reveal">07 — 09 · MECANIZADO Y ACABADOS</div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S8.jpg"
-              alt="Mecanizados"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">07</span>
-            <h3>Mecanizados</h3>
-            <ul>
-              <li>Fabricación de ejes, piñones y poleas.</li>
-              <li>Fresa y torno convencional.</li>
-              <li>Centro de mecanizado CNC.</li>
-              <li>
-                Balanceo estático y prensa para volteo de bujes de bulldozer.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S13.jpg"
-              alt="Tratamientos superficiales"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">08</span>
-            <h3>Tratamientos Superficiales</h3>
-            <ul>
-              <li>Sandblasting con arena.</li>
-              <li>
-                Sandblasting ECOQUIP — sistema ecológico con granate y agua.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S12.jpg"
-              alt="Mantenimiento automotriz"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">09</span>
-            <h3>Mantenimiento Automotriz</h3>
-            <ul>
-              <li>
-                Servicio integral de mantenimiento para vehículos, flotas y
-                maquinaria pesada.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dim-divider reveal">ROLADO ESPECIALIZADO</div>
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/linea.png"
-              alt="Rolado de láminas y perfiles"
-              loading="lazy"
-              style="
-                background: var(--ink-3);
-                object-fit: contain;
-                padding: 20px;
-              "
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">+</span>
-            <h3>Rolado de Láminas y Perfiles</h3>
-            <ul>
-              <li>
-                Rolado de láminas hasta <strong>20 mm de espesor</strong> por 3
-                m de ancho, y espesores mayores según el ancho de la lámina.
-              </li>
-              <li>
-                Curvado de perfilería estructural en forma longitudinal y
-                transversal.
-              </li>
-              <li>Curvado de platinas, channel y ángulos hasta 220 mm.</li>
-              <li>Perfiles I, H, T y S hasta 150 mm.</li>
-              <li>Tubería circular y cuadrada hasta Ø8" SCH40.</li>
-              <li>Barra circular y cuadrada hasta Ø90 mm.</li>
-            </ul>
+          <div class="value-card bp-frame reveal reveal-d4">
+            <span class="bp-c2"></span><span class="bp-c3"></span>
+            <h4>Proactividad</h4>
+            <p>
+              Conducta activa, que implica la toma de iniciativa con
+              responsabilidad de hacer que las cosas sucedan.
+            </p>
           </div>
         </div>
       </div>
     </section>
+
+    <section id="certificaciones">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Respaldo</div>
+          <h2>Nuestras Certificaciones</h2>
+        </div>
+        <div class="cert-band reveal reveal-d1">
+          <div class="cert-plate">
+            <img
+              src="/img/certi-cidet.png"
+              alt="Certificación CIDET"
+              loading="lazy"
+            />
+          </div>
+          <div class="cert-plate">
+            <img
+              src="/img/certi-veritas.png"
+              alt="Certificación Bureau Veritas"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quote-strip">
+      <div class="wrap">
+        <p class="reveal">
+          Somos tradición, calidad y servicio, somos Montería... somos Remec
+        </p>
+      </div>
+    </div>
 
     <div class="cta-strip">
       <div class="wrap">
-        <h2>¿Tiene un proyecto en mente?</h2>
-        <p>
-          Cuéntenos qué necesita fabricar, reparar o mantener y le respondemos
-          directamente por WhatsApp.
-        </p>
-        <a
-          class="btn btn-primary"
-          href="https://wa.me/573212651325?texto=Me%20interesa%20uno%20de%20sus%20servicios"
-          target="_blank"
-          rel="noopener"
-          >Escribir por WhatsApp →</a
+        <a class="btn btn-primary" href="servicios.html"
+          >Más Información →</a
         >
       </div>
     </div>
@@ -983,7 +842,6 @@
         { passive: true },
       );
 
-      // hamburger / mobile drawer
       const burgerBtn = document.getElementById("burgerBtn");
       const mobileMenu = document.getElementById("mobileMenu");
       const menuScrim = document.getElementById("menuScrim");

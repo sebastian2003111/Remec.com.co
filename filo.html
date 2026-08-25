@@ -28,6 +28,8 @@
         --text-dim: #ced4da;
         --paper: #f8f9fa;
         --maxw: 1180px;
+        --blanco: #fff;
+        --rojo: #e80303;
       }
       * {
         box-sizing: border-box;
@@ -200,7 +202,6 @@
       .brand img {
         height: 34px;
         width: auto;
-       
       }
       .brand-text {
         font-family: "Big Shoulders Display", sans-serif;
@@ -211,7 +212,7 @@
       nav ul {
         list-style: none;
         display: flex;
-        gap: 24px;
+        gap: 28px;
         margin: 0;
         padding: 0;
       }
@@ -228,16 +229,18 @@
       nav a:hover {
         color: var(--text);
       }
-      nav a.active {
-        color: var(--ember);
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background: var(--ember);
+        transition: width 0.3s ease;
       }
-      .navlinks {
-        display: none;
-      }
-      @media (min-width: 860px) {
-        .navlinks {
-          display: block;
-        }
+      nav a:hover::after {
+        width: 100%;
       }
       .nav-cta {
         font-family: "IBM Plex Mono", monospace;
@@ -251,9 +254,25 @@
         text-transform: uppercase;
         display: none;
       }
+      .navlinks a.activo {
+        box-shadow: 0 8px 20px rgba(2, 252, 31, 0.8);
+        background-color: var(--verde) transparent 100%;
+        color: var(--blanco);
+        border-radius: 5px;
+      }
       @media (min-width: 860px) {
         .nav-cta {
           display: inline-block;
+        }
+      }
+
+      /* desktop nav visible >=860px, mobile drawer below that */
+      .navlinks {
+        display: none;
+      }
+      @media (min-width: 860px) {
+        .navlinks {
+          display: block;
         }
       }
 
@@ -392,8 +411,8 @@
         opacity: 0.3;
         pointer-events: none;
         background-image:
-          linear-gradient(var(--blueprint-dim) 1px, transparent 1px),
-          linear-gradient(90deg, var(--blueprint-dim) 1px, transparent 1px);
+          linear-gradient(var(--blueprint) 1px, transparent 1px),
+          linear-gradient(90deg, var(--rojo) 1px, transparent 1px);
         background-size: 64px 64px;
         mask-image: radial-gradient(
           ellipse 90% 70% at 50% 60%,
@@ -446,7 +465,7 @@
         margin: 44px 0 32px;
         font-family: "IBM Plex Mono", monospace;
         font-size: 11px;
-        color: var(--blueprint-dim);
+        color: var(--rojo);
         letter-spacing: 0.08em;
       }
       .dim-divider::before,
@@ -546,7 +565,6 @@
       .cert-plate img {
         max-height: 80px;
         width: auto;
-        
       }
 
       .quote-strip {
@@ -629,20 +647,125 @@
           transform: none;
         }
       }
+      /* botones de redes sociales */
+
+      .social-row {
+        display: flex;
+        gap: 18px;
+      }
+      .uiverse {
+        position: relative;
+        background: #343a40;
+        color: #ced4da;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 1px solid #495057;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.5);
+        transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      .uiverse svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+        transition: fill 0.3s ease;
+      }
+      .uiverse .tooltip {
+        position: absolute;
+        top: 0;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        background: #f8f9fa;
+        color: #15181c;
+        padding: 6px 10px;
+        border-radius: 4px;
+        box-shadow: 0 10px 16px -6px rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      .uiverse .tooltip::before {
+        position: absolute;
+        content: "";
+        height: 8px;
+        width: 8px;
+        background: inherit;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+      }
+      .uiverse:hover {
+        transform: translateY(-4px) scale(1.06);
+        border-color: transparent;
+      }
+      .uiverse:hover .tooltip {
+        top: -46px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .uiverse:hover,
+      .uiverse:hover .tooltip,
+      .uiverse:hover .tooltip::before {
+        background: linear-gradient(320deg, #0056b3, #09875a);
+        color: #ffffff;
+      }
+      .uiverse:nth-child(2):hover,
+      .uiverse:nth-child(2):hover .tooltip,
+      .uiverse:nth-child(2):hover .tooltip::before {
+        background: linear-gradient(320deg, #28a745, #09875a);
+      }
+      .uiverse:nth-child(3):hover,
+      .uiverse:nth-child(3):hover .tooltip,
+      .uiverse:nth-child(3):hover .tooltip::before {
+        background: linear-gradient(320deg, #007bff, #0056b3);
+      }
     </style>
   </head>
   <body>
     <header id="siteHeader">
-  <div class="wrap navrow">
-    <div class="brand">
-      <img src="/img/logo.png" alt="REMEC">
-      <!-- <span class="brand-text">REMEC S.A.S.</span> -->
-    </div>
-    <nav class="navlinks">
+      <div class="wrap navrow">
+        <div class="brand">
+          <img src="img/logo.png" alt="REMEC" />
+          <!-- <span class="brand-text">REMEC S.A.S.</span> -->
+        </div>
+        <nav class="navlinks">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li>
+              <a href="filo.html" class="activo">Filosofía Corporativa</a>
+            </li>
+            <li><a href="AP.html">Postes</a></li>
+            <li><a href="arquimidex.html">Arquimidex</a></li>
+            <li><a href="arteplasma.html">Arte Plasma</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <button
+          class="burger"
+          id="burgerBtn"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="menu-scrim" id="menuScrim"></div>
+    <div class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="filo.html">Filosofía Corporativa</a></li>
+        <li><a href="filo.html" class="activo">Filosofía Corporativa</a></li>
         <li><a href="AP.html">Postes</a></li>
         <li><a href="arquimidex.html">Arquimidex</a></li>
         <li><a href="arteplasma.html">Arte Plasma</a></li>
@@ -650,27 +773,7 @@
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
-    </nav>
-    <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<div class="menu-scrim" id="menuScrim"></div>
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="filo.html">Filosofía Corporativa</a></li>
-        <li><a href="AP.html">Postes</a></li>
-        <li><a href="arquimidex.html">Arquimidex</a></li>
-        <li><a href="arteplasma.html">Arte Plasma</a></li>
-        <li><a href="clientes.html">Clientes</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-</div>
+    </div>
 
     <section class="page-hero">
       <div class="page-hero-img">
@@ -793,14 +896,14 @@
         <div class="cert-band reveal reveal-d1">
           <div class="cert-plate">
             <img
-              src="/img/certi-cidet.png"
+              src="img/certi-cidet.png"
               alt="Certificación CIDET"
               loading="lazy"
             />
           </div>
           <div class="cert-plate">
             <img
-              src="/img/certi-veritas.png"
+              src="img/certi-veritas.png"
               alt="Certificación Bureau Veritas"
               loading="lazy"
             />
@@ -819,18 +922,70 @@
 
     <div class="cta-strip">
       <div class="wrap">
-        <a class="btn btn-primary" href="servicios.html"
-          >Más Información →</a
-        >
+        <a class="btn btn-primary" href="servicios.html">Más Información →</a>
       </div>
     </div>
 
     <footer>
-      <div class="wrap">
+      <div
+        class="wrap"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          gap: 14px;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
         <span class="mono"
           >© 2026 REMEC S.A.S. — Montería, Córdoba, Colombia</span
         >
         <span class="mono">TRADICIÓN · CALIDAD · SERVICIO</span>
+        <!-- From Uiverse.io by Cornerstone-04 -->
+        <div class="social-row" style="justify-content: center">
+          <a
+            class="uiverse"
+            href="https://www.facebook.com/REMEC-SAS-288695484930140/?__tn__=%2Cd%2CP-R&eid=ARAV5PS2P7mCp-uxV-PCwuwmVaQNPxGnORrTUB4tNMfFMXdAupHGW5edUmp9kNLCj1opHwnJgBR68hh6"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+          >
+            <span class="tooltip">Facebook</span>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"
+              />
+            </svg>
+          </a>
+          <a
+            class="uiverse"
+            href="https://instagram.com/remecmonteria?igshid=1e9cdvmd9q17o"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram REMEC"
+          >
+            <span class="tooltip">@remecmonteria</span>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.38C1.35 2.67.94 3.34.63 4.13c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.33 1.07 2.12 1.38.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.12-1.38.66-.66 1.07-1.33 1.38-2.12.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.87 5.87 0 0 0 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"
+              />
+            </svg>
+          </a>
+          <a
+            class="uiverse"
+            href="https://www.instagram.com/arte.plasma/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram Arte Plasma"
+          >
+            <span class="tooltip">@arte.plasma</span>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.38C1.35 2.67.94 3.34.63 4.13c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.33 1.07 2.12 1.38.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.12-1.38.66-.66 1.07-1.33 1.38-2.12.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.87 5.87 0 0 0 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
     </footer>
 

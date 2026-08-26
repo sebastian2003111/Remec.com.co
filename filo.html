@@ -20,8 +20,8 @@
         --ink-3: #3f454b;
         --line: #495057;
         --line-soft: #3a3f44;
-        --blueprint: #007bff;
-        --blueprint-dim: #0056b3;
+        --blueprint: #ff0000; /* Color contenedor valores */
+        --blueprint-dim: #255384;
         --ember: #09875a;
         --ember-2: #28a745;
         --text: #f8f9fa;
@@ -729,51 +729,44 @@
   </head>
   <body>
     <header id="siteHeader">
-      <div class="wrap navrow">
-        <div class="brand">
-          <img src="img/logo.png" alt="REMEC" />
-          <!-- <span class="brand-text">REMEC S.A.S.</span> -->
-        </div>
-        <nav class="navlinks">
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li>
-              <a href="filo.html" class="activo">Filosofía Corporativa</a>
-            </li>
-            <li><a href="AP.html">Postes</a></li>
-            <li><a href="arquimidex.html">Arquimidex</a></li>
-            <li><a href="arteplasma.html">Arte Plasma</a></li>
-            <li><a href="clientes.html">Clientes</a></li>
-            <li><a href="galeria.html">Galeria</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-        </nav>
-        <button
-          class="burger"
-          id="burgerBtn"
-          aria-label="Abrir menú"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </header>
-
-    <div class="menu-scrim" id="menuScrim"></div>
-    <div class="mobile-menu" id="mobileMenu">
+  <div class="wrap navrow">
+    <div class="brand">
+      <img src="img/logo.png" alt="REMEC">
+      <!-- <span class="brand-text">REMEC S.A.S.</span> -->
+    </div>
+    <nav class="navlinks">
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="servicios.html">Servicios</a></li>
         <li><a href="filo.html" class="activo">Filosofía Corporativa</a></li>
         <li><a href="AP.html">Postes</a></li>
         <li><a href="arquimidex.html">Arquimidex</a></li>
-        <li><a href="arteplasma.html">Arte Plasma</a></li>
+        <li><a href="artplasma.html">Arte Plasma</a></li>
         <li><a href="clientes.html">Clientes</a></li>
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
-    </div>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu-scrim" id="menuScrim"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="filo.html">Filosofía Corporativa</a></li>
+        <li><a href="AP.html">Postes</a></li>
+        <li><a href="arquimidex.html">Arquimidex</a></li>
+        <li><a href="artplasma.html">Arte Plasma</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+</div>
 
     <section class="page-hero">
       <div class="page-hero-img">

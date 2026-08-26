@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Servicios — REMEC S.A.S.</title>
+    <title>Nuestros Clientes — REMEC S.A.S.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +20,7 @@
         --ink-3: #3f454b;
         --line: #495057;
         --line-soft: #3a3f44;
-        --blueprint: #ef0b0b;
+        --blueprint: #007bff;
         --blueprint-dim: #0056b3;
         --ember: #09875a;
         --ember-2: #28a745;
@@ -28,8 +28,6 @@
         --text-dim: #ced4da;
         --paper: #f8f9fa;
         --maxw: 1180px;
-        --blanco: #fff;
-        --rojo: #e80303;
       }
       * {
         box-sizing: border-box;
@@ -180,7 +178,7 @@
         border-bottom: 1px solid transparent;
       }
       header.scrolled {
-        background: rgba(18, 21, 26, 0.88);
+        background: rgba(21, 24, 28, 0.88);
         backdrop-filter: blur(10px);
         padding: 12px 0;
         border-bottom: 1px solid var(--line);
@@ -199,7 +197,7 @@
       .brand img {
         height: 34px;
         width: auto;
-        
+
       }
       .brand-text {
         font-family: "Big Shoulders Display", sans-serif;
@@ -252,16 +250,17 @@
         text-transform: uppercase;
         display: none;
       }
+      @media (min-width: 860px) {
+        .nav-cta {
+          display: inline-block;
+        }
+      }
+
       .navlinks a.activo {
         box-shadow: 0 8px 20px rgba(2, 252, 31, 0.8);
         background-color: var(--verde) transparent 100%;
         color: var(--blanco);
         border-radius: 5px;
-      }
-      @media (min-width: 860px) {
-        .nav-cta {
-          display: inline-block;
-        }
       }
 
       /* desktop nav visible >=860px, mobile drawer below that */
@@ -273,8 +272,6 @@
           display: block;
         }
       }
-
-      /* ---------- hamburger button ---------- */
       .burger {
         display: flex;
         flex-direction: column;
@@ -311,7 +308,6 @@
         transform: translateY(-7px) rotate(-45deg);
       }
 
-      /* ---------- mobile drawer ---------- */
       .mobile-menu {
         position: fixed;
         top: 0;
@@ -337,12 +333,12 @@
         padding: 0;
         display: flex;
         flex-direction: column;
-        gap: 26px;
+        gap: 24px;
       }
       .mobile-menu a {
         font-family: "Big Shoulders Display", sans-serif;
         font-weight: 800;
-        font-size: 26px;
+        font-size: 23px;
         text-transform: uppercase;
         color: var(--paper);
         letter-spacing: 0.01em;
@@ -353,14 +349,14 @@
       }
       .mobile-menu .nav-cta {
         display: inline-block;
-        margin-top: 34px;
+        margin-top: 30px;
         width: fit-content;
       }
       .menu-scrim {
         position: fixed;
         inset: 0;
         z-index: 98;
-        background: rgba(18, 21, 26, 0.7);
+        background: rgba(21, 24, 28, 0.7);
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.35s ease;
@@ -399,8 +395,8 @@
         z-index: 1;
         background: linear-gradient(
           180deg,
-          rgba(18, 21, 26, 0.4) 0%,
-          rgba(18, 21, 26, 0.55) 40%,
+          rgba(21, 24, 28, 0.4) 0%,
+          rgba(21, 24, 28, 0.55) 40%,
           var(--ink) 100%
         );
       }
@@ -424,17 +420,21 @@
         position: relative;
         z-index: 3;
         padding-top: 150px;
+        max-width: 680px;
       }
       .page-hero h1 {
-        font-size: clamp(44px, 8vw, 96px);
+        font-size: clamp(38px, 6.6vw, 80px);
         color: var(--paper);
+      }
+      .page-hero h1 em {
+        font-style: normal;
+        color: var(--ember);
       }
       .page-hero p {
         margin-top: 18px;
-        max-width: 520px;
         color: var(--text-dim);
-        font-size: 16px;
-        line-height: 1.65;
+        font-size: 15.5px;
+        line-height: 1.7;
       }
 
       section {
@@ -442,26 +442,28 @@
       }
       .sec-head {
         max-width: 640px;
-        margin-bottom: 48px;
+        margin-bottom: 44px;
       }
       .sec-head h2 {
-        font-size: clamp(30px, 4.6vw, 48px);
+        font-size: clamp(28px, 4.2vw, 44px);
         color: var(--paper);
         margin-top: 14px;
       }
-      .sec-head p {
-        color: var(--text-dim);
-        margin-top: 14px;
-        line-height: 1.7;
-        font-size: 15px;
+
+      .about-img {
+        position: relative;
+      }
+      .about-img img {
+        width: 100%;
+        height: auto;
+        display: block;
       }
 
-      /* dimension divider between service blocks */
       .dim-divider {
         display: flex;
         align-items: center;
         gap: 14px;
-        margin: 0 0 40px;
+        margin: 0 0 26px;
         font-family: "IBM Plex Mono", monospace;
         font-size: 11px;
         color: var(--blueprint-dim);
@@ -475,104 +477,151 @@
         background: var(--line);
       }
 
-      .svc-block {
+      .sgi-list {
+        list-style: none;
+        margin: 0 0 44px;
+        padding: 0;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 0;
-        margin-bottom: 2px;
-        background: var(--ink-2);
+        gap: 1px;
+        background: var(--line);
         border: 1px solid var(--line);
       }
-      @media (min-width: 900px) {
-        .svc-block {
-          grid-template-columns: 0.9fr 1.1fr;
+      @media (min-width: 760px) {
+        .sgi-list {
+          grid-template-columns: 1fr 1fr;
         }
       }
-      .svc-block:nth-child(even) {
-      }
-      .svc-block-img {
+      .sgi-list li {
+        background: var(--ink-2);
+        padding: 20px 24px;
         position: relative;
-        min-height: 260px;
-        overflow: hidden;
-      }
-      .svc-block-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        inset: 0;
-        transition: transform 0.8s cubic-bezier(0.16, 0.8, 0.28, 1);
-        filter: saturate(0.85) contrast(1.05);
-      }
-      .svc-block:hover .svc-block-img img {
-        transform: scale(1.06);
-      }
-      .svc-block-body {
-        padding: 40px 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .svc-tag {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 11px;
-        color: var(--blueprint);
-        border: 1px solid var(--line-soft);
-        padding: 3px 9px;
-        width: fit-content;
-        margin-bottom: 16px;
-      }
-      .svc-block-body h3 {
-        font-size: clamp(24px, 3vw, 32px);
-        color: var(--paper);
-        margin-bottom: 16px;
-      }
-      .svc-block-body ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .svc-block-body li {
-        position: relative;
-        padding-left: 20px;
+        padding-left: 42px;
         color: var(--text-dim);
         font-size: 14.5px;
-        line-height: 1.55;
+        line-height: 1.6;
       }
-      .svc-block-body li::before {
+      .sgi-list li::before {
         content: "";
         position: absolute;
-        left: 0;
-        top: 8px;
-        width: 8px;
+        left: 20px;
+        top: 26px;
+        width: 10px;
         height: 1px;
         background: var(--ember);
       }
-      .svc-block-body li strong {
+
+      .client-manifest {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid var(--line);
+        column-count: 1;
+        column-gap: 0;
+      }
+      @media (min-width: 640px) {
+        .client-manifest {
+          column-count: 2;
+          column-gap: 0;
+        }
+      }
+      @media (min-width: 980px) {
+        .client-manifest {
+          column-count: 3;
+          column-gap: 0;
+        }
+      }
+      .client-manifest li {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        padding: 15px 18px;
+        border-bottom: 1px solid var(--line);
+        break-inside: avoid;
+        transition: background 0.25s ease;
+      }
+      .client-manifest li:hover {
+        background: var(--ink-2);
+      }
+      .cl-num {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        color: var(--ember);
+        flex-shrink: 0;
+        width: 22px;
+      }
+      .cl-name {
+        font-size: 13.5px;
+        color: var(--text-dim);
+        letter-spacing: 0.01em;
+        line-height: 1.4;
+      }
+      .client-manifest li:hover .cl-name {
         color: var(--paper);
-        font-weight: 600;
       }
 
-      .cta-strip {
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      @media (min-width: 700px) {
+        .gallery-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .gallery-item {
+        background: var(--ink-2);
+        overflow: hidden;
+        position: relative;
+        height: 280px;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.16, 0.8, 0.28, 1);
+        filter: saturate(0.9) contrast(1.05);
+      }
+      .gallery-item:hover img {
+        transform: scale(1.08);
+      }
+      .gallery-item .g-num {
+        position: absolute;
+        top: 12px;
+        left: 14px;
+        z-index: 2;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        color: var(--blueprint);
+        background: rgba(21, 24, 28, 0.7);
+        padding: 3px 8px;
+        border: 1px solid var(--line-soft);
+      }
+
+      .quote-strip {
         background: var(--ink-2);
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
-        padding: 72px 0;
+        padding: 64px 0;
         text-align: center;
       }
-      .cta-strip h2 {
-        font-size: clamp(28px, 4.4vw, 44px);
+      .quote-strip p {
+        font-family: "Big Shoulders Display", sans-serif;
+        font-weight: 700;
+        text-transform: none;
+        font-size: clamp(20px, 3vw, 30px);
         color: var(--paper);
+        max-width: 760px;
+        margin: 0 auto;
+        line-height: 1.3;
       }
-      .cta-strip p {
-        color: var(--text-dim);
-        margin: 16px auto 30px;
-        max-width: 460px;
-        font-size: 15px;
-        line-height: 1.6;
+
+      .cta-strip {
+        padding: 72px 0;
+        text-align: center;
       }
       .btn {
         font-family: "IBM Plex Mono", monospace;
@@ -596,6 +645,87 @@
       .btn-primary:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 26px -8px rgba(9, 135, 90, 0.55);
+      }
+
+      .social-row {
+        display: flex;
+        gap: 18px;
+      }
+      .uiverse {
+        position: relative;
+        background: var(--ink-2);
+        color: var(--text-dim);
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.5);
+        transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      .uiverse svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+        transition: fill 0.3s ease;
+      }
+      .uiverse .tooltip {
+        position: absolute;
+        top: 0;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        background: var(--paper);
+        color: var(--ink);
+        padding: 6px 10px;
+        border-radius: 4px;
+        box-shadow: 0 10px 16px -6px rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      .uiverse .tooltip::before {
+        position: absolute;
+        content: "";
+        height: 8px;
+        width: 8px;
+        background: inherit;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+      }
+      .uiverse:hover {
+        transform: translateY(-4px) scale(1.06);
+        border-color: transparent;
+      }
+      .uiverse:hover .tooltip {
+        top: -46px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .uiverse:hover,
+      .uiverse:hover .tooltip,
+      .uiverse:hover .tooltip::before {
+        background: linear-gradient(320deg, var(--blueprint-dim), var(--ember));
+        color: #fff;
+      }
+      .uiverse:nth-child(2):hover,
+      .uiverse:nth-child(2):hover .tooltip,
+      .uiverse:nth-child(2):hover .tooltip::before {
+        background: linear-gradient(320deg, var(--ember-2), var(--ember));
+      }
+      .uiverse:nth-child(3):hover,
+      .uiverse:nth-child(3):hover .tooltip,
+      .uiverse:nth-child(3):hover .tooltip::before {
+        background: linear-gradient(
+          320deg,
+          var(--blueprint),
+          var(--blueprint-dim)
+        );
       }
 
       footer {
@@ -627,116 +757,43 @@
           transform: none;
         }
       }
-      /* botones de redes sociales */
-
-      .social-row {
-        display: flex;
-        gap: 18px;
-      }
-      .uiverse {
-        position: relative;
-        background: #343a40;
-        color: #ced4da;
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        border: 1px solid #495057;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.5);
-        transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      }
-      .uiverse svg {
-        width: 20px;
-        height: 20px;
-        fill: currentColor;
-        transition: fill 0.3s ease;
-      }
-      .uiverse .tooltip {
-        position: absolute;
-        top: 0;
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 12px;
-        letter-spacing: 0.03em;
-        white-space: nowrap;
-        background: #f8f9fa;
-        color: #15181c;
-        padding: 6px 10px;
-        border-radius: 4px;
-        box-shadow: 0 10px 16px -6px rgba(0, 0, 0, 0.4);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      }
-      .uiverse .tooltip::before {
-        position: absolute;
-        content: "";
-        height: 8px;
-        width: 8px;
-        background: inherit;
-        bottom: -3px;
-        left: 50%;
-        transform: translateX(-50%) rotate(45deg);
-      }
-      .uiverse:hover {
-        transform: translateY(-4px) scale(1.06);
-        border-color: transparent;
-      }
-      .uiverse:hover .tooltip {
-        top: -46px;
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .uiverse:hover,
-      .uiverse:hover .tooltip,
-      .uiverse:hover .tooltip::before {
-        background: linear-gradient(320deg, #0056b3, #09875a);
-        color: #ffffff;
-      }
-      .uiverse:nth-child(2):hover,
-      .uiverse:nth-child(2):hover .tooltip,
-      .uiverse:nth-child(2):hover .tooltip::before {
-        background: linear-gradient(320deg, #28a745, #09875a);
-      }
-      .uiverse:nth-child(3):hover,
-      .uiverse:nth-child(3):hover .tooltip,
-      .uiverse:nth-child(3):hover .tooltip::before {
-        background: linear-gradient(320deg, #007bff, #0056b3);
-      }
     </style>
   </head>
   <body>
     <header id="siteHeader">
-  <div class="wrap navrow">
-    <div class="brand">
-      <img src="img/logo.png" alt="REMEC">
-      <!-- <span class="brand-text">REMEC S.A.S.</span> -->
-    </div>
-    <nav class="navlinks">
+      <div class="wrap navrow">
+        <div class="brand">
+          <img src="img/logo.png" alt="REMEC" />
+          <!-- <span class="brand-text">REMEC S.A.S.</span> -->
+        </div>
+        <nav class="navlinks">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="filo.html">Filosofía Corporativa</a></li>
+            <li><a href="AP.html">Postes</a></li>
+            <li><a href="arquimidex.html">Arquimidex</a></li>
+            <li><a href="artplasma.html">Arte Plasma</a></li>
+            <li><a href="clientes.html" class="activo">Clientes</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <button
+          class="burger"
+          id="burgerBtn"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="menu-scrim" id="menuScrim"></div>
+    <div class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html" class="activo">Servicios</a></li>
-        <li><a href="filo.html">Filosofía Corporativa</a></li>
-        <li><a href="AP.html">Postes</a></li>
-        <li><a href="arquimidex.html">Arquimidex</a></li>
-        <li><a href="artplasma.html">Arte Plasma</a></li>
-        <li><a href="clientes.html">Clientes</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-    <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<div class="menu-scrim" id="menuScrim"></div>
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
         <li><a href="servicios.html">Servicios</a></li>
         <li><a href="filo.html">Filosofía Corporativa</a></li>
         <li><a href="AP.html">Postes</a></li>
@@ -745,332 +802,252 @@
         <li><a href="clientes.html">Clientes</a></li>
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-</div>
+      </ul>
+    </div>
 
     <section class="page-hero">
       <div class="page-hero-img">
-        <img src="https://remec.com.co/images/1.jpg" alt="Taller REMEC" />
+        <img
+          src="https://remec.com.co/images/clientes.jpg"
+          alt="Nuestros Clientes"
+        />
       </div>
       <div class="page-hero-scrim"></div>
       <div class="page-hero-grid"></div>
       <div class="wrap page-hero-content">
-        <div class="eyebrow">Portafolio completo</div>
-        <h1 style="margin-top: 14px">Servicios</h1>
-        <p>
-          Nueve líneas de trabajo bajo un mismo taller: motores, estructuras,
-          pintura, alumbrado público, mecanizado, diesel, tratamientos
-          superficiales, bombeo y arte en metal.
+        <div class="eyebrow">Respaldo · Confianza · Trayectoria</div>
+        <h1 style="margin-top: 14px"><em>Nuestros</em> Clientes</h1>
+      </div>
+    </section>
+
+    <section id="clientes-lista">
+      <div class="wrap">
+        <ul class="client-manifest reveal">
+          <li>
+            <span class="cl-num mono">01</span
+            ><span class="cl-name">VEOLIA AGUAS DE MONTERÍA</span>
+          </li>
+          <li>
+            <span class="cl-num mono">02</span
+            ><span class="cl-name">FRIGOSINÚ S.A</span>
+          </li>
+          <li>
+            <span class="cl-num mono">03</span
+            ><span class="cl-name">CERRO MATOSO S.A</span>
+          </li>
+          <li>
+            <span class="cl-num mono">04</span
+            ><span class="cl-name">CEMENTOS ARGOS S.A</span>
+          </li>
+          <li>
+            <span class="cl-num mono">05</span
+            ><span class="cl-name">ATHENA FOODS</span>
+          </li>
+          <li>
+            <span class="cl-num mono">06</span
+            ><span class="cl-name">COOPERATIVA COLANTA</span>
+          </li>
+          <li>
+            <span class="cl-num mono">07</span
+            ><span class="cl-name">NUTRYR DEL CARIBE</span>
+          </li>
+          <li>
+            <span class="cl-num mono">08</span
+            ><span class="cl-name">LADRILLERA LOS CERROS</span>
+          </li>
+          <li>
+            <span class="cl-num mono">09</span
+            ><span class="cl-name">LADRILLERA SAN MIGUEL</span>
+          </li>
+          <li>
+            <span class="cl-num mono">10</span
+            ><span class="cl-name">GRUPO AGREGAR S.A.S</span>
+          </li>
+          <li>
+            <span class="cl-num mono">11</span
+            ><span class="cl-name">AGREGADOS Y CANTERAS DEL NORTE S.A.S</span>
+          </li>
+          <li>
+            <span class="cl-num mono">12</span
+            ><span class="cl-name"
+              >GEOPRODUCTION OIL AND GAS COMPANY OFF COLOMBIA</span
+            >
+          </li>
+          <li>
+            <span class="cl-num mono">13</span
+            ><span class="cl-name">OCENSA S.A</span>
+          </li>
+          <li>
+            <span class="cl-num mono">14</span
+            ><span class="cl-name">ECOPETROL S.A</span>
+          </li>
+          <li>
+            <span class="cl-num mono">15</span
+            ><span class="cl-name">MASSY ENERGY COLOMBIA S.A.S</span>
+          </li>
+          <li>
+            <span class="cl-num mono">16</span
+            ><span class="cl-name">ALAMEDAS CENTRO COMERCIAL</span>
+          </li>
+          <li>
+            <span class="cl-num mono">17</span
+            ><span class="cl-name">SERVI PETROL BP S.A.S</span>
+          </li>
+          <li>
+            <span class="cl-num mono">18</span
+            ><span class="cl-name">SURTIGAS SA E.S.P</span>
+          </li>
+          <li>
+            <span class="cl-num mono">19</span
+            ><span class="cl-name">ELEC S.A</span>
+          </li>
+          <li>
+            <span class="cl-num mono">20</span
+            ><span class="cl-name">LOPECA SAS</span>
+          </li>
+          <li>
+            <span class="cl-num mono">21</span
+            ><span class="cl-name">CAFE CORDOBA</span>
+          </li>
+          <li>
+            <span class="cl-num mono">22</span
+            ><span class="cl-name">SOPROAS SA</span>
+          </li>
+          <li>
+            <span class="cl-num mono">23</span
+            ><span class="cl-name">ARROCERA SAHAGUN S.A.S</span>
+          </li>
+          <li>
+            <span class="cl-num mono">24</span
+            ><span class="cl-name">GASEOSAS DE CORDOBA S.A</span>
+          </li>
+          <li>
+            <span class="cl-num mono">25</span
+            ><span class="cl-name">SOBERANA</span>
+          </li>
+          <li>
+            <span class="cl-num mono">26</span
+            ><span class="cl-name">RENTING COLOMBIA</span>
+          </li>
+          <li>
+            <span class="cl-num mono">27</span
+            ><span class="cl-name">CONEQUIPOS SAS</span>
+          </li>
+          <li>
+            <span class="cl-num mono">28</span
+            ><span class="cl-name">FRIGORIFICO DEL CAUCA S.A.S</span>
+          </li>
+          <li>
+            <span class="cl-num mono">29</span
+            ><span class="cl-name">SATOR S.A.S</span>
+          </li>
+          <li>
+            <span class="cl-num mono">30</span
+            ><span class="cl-name">REFRASO LTDA</span>
+          </li>
+          <li>
+            <span class="cl-num mono">31</span
+            ><span class="cl-name">SINGCOL S.A.S</span>
+          </li>
+          <li>
+            <span class="cl-num mono">32</span
+            ><span class="cl-name">EXTRACTORA MARIA LA BAJA S.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">33</span
+            ><span class="cl-name">TAMANÁ PACIFIC CORPORATION S.A.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">34</span
+            ><span class="cl-name">COUNTRY MOTORS S.A.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">35</span
+            ><span class="cl-name">DUMAR INGENIEROS S.A.S</span>
+          </li>
+          <li>
+            <span class="cl-num mono">36</span
+            ><span class="cl-name">DORIAUTOS S.A.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">37</span
+            ><span class="cl-name">AUTO ROBLE LTDA.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">38</span
+            ><span class="cl-name">CONSTRUCCIONES EL CONDOR S.A</span>
+          </li>
+          <li>
+            <span class="cl-num mono">39</span
+            ><span class="cl-name">MAQUITERRA S.A.S.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">40</span
+            ><span class="cl-name">TALLERES AUTORIZADOS S.A. (DINISSAN)</span>
+          </li>
+          <li>
+            <span class="cl-num mono">41</span
+            ><span class="cl-name">SERVICARROS MONTERIA S.A.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">42</span
+            ><span class="cl-name">BARU MOTORS S.A.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">43</span
+            ><span class="cl-name">KMA CONSTRUCCIONES S.A.S.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">44</span
+            ><span class="cl-name">CASA TORO S.A.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">45</span
+            ><span class="cl-name">CAMPEROS DE CORDOBA LTDA (CAMPECOR)</span>
+          </li>
+          <li>
+            <span class="cl-num mono">46</span
+            ><span class="cl-name">PUPO Y SOFAN BUILDING S.A.S.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">47</span
+            ><span class="cl-name">INDUMINA (INDUSTRIA DE MINERALES)</span>
+          </li>
+          <li>
+            <span class="cl-num mono">48</span
+            ><span class="cl-name">CHM MINERIA S.A.S.</span>
+          </li>
+          <li>
+            <span class="cl-num mono">49</span
+            ><span class="cl-name">HYUNDAI AUTOSINU S.A.S</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="quote-strip">
+      <div class="wrap">
+        <p class="reveal">
+          Somos tradición, calidad y servicio, somos Montería... somos Remec
         </p>
       </div>
-    </section>
-
-    <section id="servicios">
-      <div class="wrap">
-        <div class="dim-divider reveal">01 — 03 · TALLER PESADO</div>
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S3.jpg"
-              alt="Reconstrucción de motores"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">01</span>
-            <h3>Reconstrucción de Motores</h3>
-            <ul>
-              <li>
-                <strong>Bloques:</strong> encamisado y rectificación de
-                cilindros, alineación de bancada, cambio de bujes, cepillado de
-                superficies planas, prueba hidrostática y lavado químico o al
-                vapor.
-              </li>
-              <li>
-                <strong>Culatas:</strong> cambio de guías y asientos de
-                válvulas, rectificación de válvulas, adaptación para gas
-                natural, cepillado y enderezado, prueba hidrostática con
-                temperatura variable.
-              </li>
-              <li>
-                <strong>Cigüeñales:</strong> rectificación con acabado espejo,
-                enderezado, reconstrucción de puntas y puestos de retenedor.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S6.jpg"
-              alt="Construcciones soldadas"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">02</span>
-            <h3>Construcciones Soldadas</h3>
-            <ul>
-              <li><strong>Corte:</strong> centro automatizado de corte.</li>
-              <li>
-                <strong>Conformado:</strong> doblado y rolado de lámina, rolado
-                de perfiles.
-              </li>
-              <li>
-                <strong>Ensamble:</strong> estructuras metalmecánicas y
-                soldaduras especializadas.
-              </li>
-              <li>
-                <strong>Control de calidad:</strong> tintas penetrantes y
-                pruebas hidrostáticas.
-              </li>
-              <li>
-                <strong>Servicio:</strong> reparaciones metalmecánicas en sitio.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S5.jpg"
-              alt="Pintura industrial"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">03</span>
-            <h3>Pintura Industrial</h3>
-            <ul>
-              <li>
-                <strong>Electrostática</strong> — acabado uniforme de alta
-                resistencia.
-              </li>
-              <li>
-                <strong>Acabado oxidado</strong> — tratamiento estético y
-                protector.
-              </li>
-              <li>
-                <strong>Pintura naval</strong> — protección para ambientes
-                húmedos y corrosivos.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dim-divider reveal">
-          04 — 06 · INFRAESTRUCTURA Y PRECISIÓN
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S7b.jpg"
-              alt="Postes de alumbrado público"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">04</span>
-            <h3>Postes y Brazos de Alumbrado Público</h3>
-            <ul>
-              <li><strong>Certificación CIDET</strong> vigente desde 2015.</li>
-              <li>
-                Fabricación de postes y brazos para proyectos de infraestructura
-                pública y privada.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/arqui.jpg"
-              alt="Bombas de tornillo Arquimedex"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">05</span>
-            <h3>Bombas de Tornillo — Arquimedex</h3>
-            <ul>
-              <li>
-                Sistemas de bombeo por tornillo para transporte de sólidos y
-                fluidos de alta viscosidad.
-              </li>
-              <li>Diseño a la medida según caudal y aplicación industrial.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S4.jpg"
-              alt="Laboratorio diesel"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">06</span>
-            <h3>Laboratorio Diesel</h3>
-            <ul>
-              <li>
-                Reparación y calibración de inyectores y bombas de inyección
-                diesel.
-              </li>
-              <li>
-                Repuestos originales, precios de importador y banco de pruebas
-                de última tecnología.
-              </li>
-              <li>Técnicos entrenados por <strong>BOSCH Colombia</strong>.</li>
-              <li>
-                Servicio llave en mano, con atención personalizada en sitio.
-              </li>
-              <li>
-                Diagnóstico y reparación de sistemas electrónicos Common-Rail.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dim-divider reveal">07 — 09 · MECANIZADO Y ACABADOS</div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S8.jpg"
-              alt="Mecanizados"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">07</span>
-            <h3>Mecanizados</h3>
-            <ul>
-              <li>Fabricación de ejes, piñones y poleas.</li>
-              <li>Fresa y torno convencional.</li>
-              <li>Centro de mecanizado CNC.</li>
-              <li>
-                Balanceo estático y prensa para volteo de bujes de bulldozer.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S13.jpg"
-              alt="Tratamientos superficiales"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">08</span>
-            <h3>Tratamientos Superficiales</h3>
-            <ul>
-              <li>Sandblasting con arena.</li>
-              <li>
-                Sandblasting ECOQUIP — sistema ecológico con granate y agua.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/S12.jpg"
-              alt="Mantenimiento automotriz"
-              loading="lazy"
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">09</span>
-            <h3>Mantenimiento Automotriz</h3>
-            <ul>
-              <li>
-                Servicio integral de mantenimiento para vehículos, flotas y
-                maquinaria pesada.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dim-divider reveal">ROLADO ESPECIALIZADO</div>
-        <div class="svc-block bp-frame reveal">
-          <span class="bp-c2"></span><span class="bp-c3"></span>
-          <div class="svc-block-img">
-            <img
-              src="https://remec.com.co/images/linea.png"
-              alt="Rolado de láminas y perfiles"
-              loading="lazy"
-              style="
-                background: var(--ink-3);
-                object-fit: contain;
-                padding: 20px;
-              "
-            />
-          </div>
-          <div class="svc-block-body">
-            <span class="svc-tag mono">+</span>
-            <h3>Rolado de Láminas y Perfiles</h3>
-            <ul>
-              <li>
-                Rolado de láminas hasta <strong>20 mm de espesor</strong> por 3
-                m de ancho, y espesores mayores según el ancho de la lámina.
-              </li>
-              <li>
-                Curvado de perfilería estructural en forma longitudinal y
-                transversal.
-              </li>
-              <li>Curvado de platinas, channel y ángulos hasta 220 mm.</li>
-              <li>Perfiles I, H, T y S hasta 150 mm.</li>
-              <li>Tubería circular y cuadrada hasta Ø8" SCH40.</li>
-              <li>Barra circular y cuadrada hasta Ø90 mm.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <div class="cta-strip">
       <div class="wrap">
-        <h2>¿Tiene un proyecto en mente?</h2>
-        <p>
-          Cuéntenos qué necesita fabricar, reparar o mantener y le respondemos
-          directamente por WhatsApp.
-        </p>
-        <a
-          class="btn btn-primary"
-          href="https://wa.me/573212651325?texto=Me%20interesa%20uno%20de%20sus%20servicios"
-          target="_blank"
-          rel="noopener"
-          >Escribir por WhatsApp →</a
+        <a class="btn btn-primary" href="servicios.html"
+          >Más Información →</a
         >
       </div>
     </div>
 
-<footer>
+    <footer>
       <div
         class="wrap"
         style="
           display: flex;
           flex-wrap: wrap;
-          gap: 14px;
+          gap: 20px;
           align-items: center;
           justify-content: space-between;
         "
@@ -1078,9 +1055,7 @@
         <span class="mono"
           >© 2026 REMEC S.A.S. — Montería, Córdoba, Colombia</span
         >
-        <span class="mono">TRADICIÓN · CALIDAD · SERVICIO</span>
-        <!-- From Uiverse.io by Cornerstone-04 -->
-        <div class="social-row" style="justify-content:center;">
+        <div class="social-row">
           <a
             class="uiverse"
             href="https://www.facebook.com/REMEC-SAS-288695484930140/?__tn__=%2Cd%2CP-R&eid=ARAV5PS2P7mCp-uxV-PCwuwmVaQNPxGnORrTUB4tNMfFMXdAupHGW5edUmp9kNLCj1opHwnJgBR68hh6"
@@ -1124,8 +1099,8 @@
             </svg>
           </a>
         </div>
+        <span class="mono">TRADICIÓN · CALIDAD · SERVICIO</span>
       </div>
-
     </footer>
 
     <script>
@@ -1136,7 +1111,6 @@
         { passive: true },
       );
 
-      // hamburger / mobile drawer
       const burgerBtn = document.getElementById("burgerBtn");
       const mobileMenu = document.getElementById("mobileMenu");
       const menuScrim = document.getElementById("menuScrim");
